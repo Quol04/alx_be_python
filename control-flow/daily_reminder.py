@@ -14,8 +14,8 @@ match priority:
     case _:
         priority_msg = "Priority level not recognized."
 
-    
-if time_bound.lower() == "yes":
+
+if time_bound == "yes":
     print(f"Reminder: {task} is a high priority task that requires immediate attention today!")
     # time_msg = "Make sure to complete it as soon as possible!"
 else:
