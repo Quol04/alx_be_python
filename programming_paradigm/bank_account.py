@@ -11,8 +11,8 @@ class BankAccount:
             return False
         
         self.account_balance += amount
-        print(f"Deposited: ${amount}")
-        return self.account_balance
+        # print(f"Deposited: ${amount:.1f}")
+        return f"${self.account_balance:.2f}"
 
     def withdraw(self, amount):
         """Withdraw money from the account if sufficient funds are available."""
@@ -24,8 +24,9 @@ class BankAccount:
             return False
         
         self.account_balance -= amount
-        print(f"Withdrew: ${amount}")
-        return self.account_balance
+        # print(f"Withdrew: ${amount:.1f}")
+        return f"${self.account_balance:.2f}"
+
 
     def display_balance(self):
         """Display the current account balance."""
