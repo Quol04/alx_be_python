@@ -4,6 +4,24 @@ class Book:
         self.author = author
         self.__is_checked_out = False
 
+    def check_out(self):
+        """Check out the book."""
+        if not self.__is_checked_out:
+            self.__is_checked_out = True
+            return True
+        return False
+
+    def return_book(self):
+        """Return the book."""
+        if self.__is_checked_out:
+            self.__is_checked_out = False
+            return True
+        return False
+
+    def is_available(self):
+        """Check if the book is available."""
+        return not self.__is_checked_out
+
     def __str__(self):
         status = "Checked Out" if self.__is_checked_out else "Available"
         return f"'{self.title}' by {self.author} - {status}"
@@ -37,4 +55,5 @@ class Library:
                 book._Book__is_checked_out = False
                 print(f"You have returned '{title}'.")
                 return
-        print(f"'{title}' was not checked out from this library.")
+        print(f"Sorry, '{title}' was not checked out or does not exist in the library.")
+
