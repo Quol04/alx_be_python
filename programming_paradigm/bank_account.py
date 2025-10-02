@@ -2,8 +2,6 @@
 class BankAccount:
     def __init__(self, initial_balance=0):
         """Initialize a bank account with an optional initial balance."""
-        if initial_balance < 0:
-            raise ValueError("Initial balance cannot be negative")
         self.account_balance = initial_balance
 
     def deposit(self, amount):
@@ -13,8 +11,8 @@ class BankAccount:
             return False
         
         self.account_balance += amount
-        # print(f"Deposited ${amount:.2f}. New balance: ${self.account_balance:.2f}")
-        return True
+        self.display_balance()
+        return self.account_balance
 
     def withdraw(self, amount):
         """Withdraw money from the account if sufficient funds are available."""
@@ -26,12 +24,10 @@ class BankAccount:
             return False
         
         self.account_balance -= amount
-        return True
+        self.display_balance()
+        return self.account_balance
 
     def display_balance(self):
         """Display the current account balance."""
-        print(f"Current balance: ${self.account_balance:.2f}")
+        print(f"Current Balance: ${self.account_balance:}")
     
-    # def get_balance(self):
-    #     """Get the current account balance."""
-    #     return self.account_balance
