@@ -31,10 +31,10 @@ class EBook(Book):
         return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 class PrintBook(Book):
-    def __init__(self, title, author, num_pages):
+    def __init__(self, title, author, page_count):
         super().__init__(title, author)
-        self.num_pages = num_pages
-     
-     #PrintBook: The Catcher in the Rye by J.D. Salinger, Page Count: 234
+        self.page_count = page_count
+
+    # PrintBook: The Catcher in the Rye by J.D. Salinger, Page Count: 234
     def __str__(self):
-        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.num_pages}"
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
